@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+   <link rel="stylesheet" href="./styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">NSS Daily Journal</header>
+    <main id="container">
+        <h2 class="header">Erica Clayton Journal</h2>
+        <form class="entryForm">
+            <fieldset>
+                <label for="entryDate">Date</label>
+                <input type="date" name="entryDate" class="entryForm__date">
+            </fieldset>
+            <fieldset>
+                <label for="conceptsCovered">Concepts Covered</label>
+                <input type="text" name="conceptsCovered" class="conceptsCovered">
+            </fieldset>
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <input type="textarea" name="journalEntry" class="journalEntry">
+            </fieldset>
+            <fieldset>
+                <label for="mood">Mood of the Day</label>
+                <select name="moodSelect" id="moodSelect">
+                    <option value="nervous">Nervous</option>
+                    <option value="confused">Confused</option>
+                    <option value="excited">Excited</option>
+                    <option value="cantCode">Cant code to save my life</option>
+                    <option value="why">Why</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <button type="button">Record Journal Entry</button>
+            </fieldset>
+        </form>
+        <article id="entries"></article>
+        <section class="journalEntries">
+            <div>
+                <p class="entry">
+                    <strong>Day 1</strong> <br>
+                    Today we were able to introduce ourselves and get to know the class and the instructors. We then broke up into our groups and we were assigned Git and Github. Our group name is the HTMLites! <br>
+                        <button type="button" id="editButton">Edit</button>
+                        <button type="button" id="deleteButton">Delete</button>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Erica Clayton</p>
+        <p><a href="https://github.com/erica-clayton" target="_blank">Github</a></a></p>
+        <p>Copyright 2022</p>
+    </footer>
+</body>
+</html>

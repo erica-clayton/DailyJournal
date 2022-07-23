@@ -1,0 +1,22 @@
+.entryForm{
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    color: aquamarine;
+    font-style: oblique;
+    text-align: center;
+}
+.entry{
+    display: flext;
+    background-color: aquamarine;
+    border: 1px solid black;
+    font-style: oblique;
+}
