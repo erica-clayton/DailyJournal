@@ -15,8 +15,9 @@ fieldset{
     text-align: center;
 }
 .entry{
-    display: flext;
+    display: flex;
     background-color: aquamarine;
     border: 1px solid black;
     font-style: oblique;
+
 }
