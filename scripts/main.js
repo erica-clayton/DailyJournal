@@ -1,33 +1,42 @@
-import {getJournalEntries} from './entries.js'
+import { dailyJournal } from './dailyJournal.js';
+import { fetchEntries } from './dataAccess.js'
 
-// for (const entry of entries) {
-//     console.log (`Date: ${entry.date}, That days concepts: ${entry.concepts} My Experience: ${entry.content} How I felt: ${entry.mood}`)
-// }
 
-// for (const entry of entries) {
-//     console.log (`The titles of my journal entries are: ${entry.concepts}.`)
-// }
+const mainContainer = document.querySelector("#container")
 
-// for (let entryOdd of entries) {
-//     if (entryOdd.id % 2 !== 0) {
-//     console.log (entryOdd)
-//     }
-// }
-
-const displayEntries = () => {
-    const entries = getJournalEntries ()
-    //loop through array to display quotes
-    let html = ""
-    for (let i = 0; i< entries.length; i++) {
-        html += `
-        <div class = "entry"><b>
-        <p>${entries[i].date}</p><b>
-        <p>${entries[i].concepts}</p><b>
-        <p>${entries[i].content}</p><b>
-        <p>${entries[i].mood}</p><b>
-        </div>`
-    }
-    document.getElementById('entries').innerHTML = html
+const render = async () => {
+    await fetchEntries();
+    mainContainer.innerHTML = dailyJournal()
 }
 
-displayEntries()
+render();
+
+document.addEventListener(
+    "stateChanged",
+    customEvent => {
+        render()
+    }
+)
+
+// const displayEntries = () => {
+//     const entries = getJournalEntries ()
+//     let html = ""
+//     for (let i = 0; i< entries.length; i++) {
+//         html += `
+//         <div class = "entry"><b>
+//         <p>${entries[i].date}</p><b>
+//         <p>${entries[i].concepts}</p><b>
+//         <p>${entries[i].content}</p><b>
+//         <p>${entries[i].mood}</p><b>
+//         </div>`
+//     }
+//     document.getElementById('entries').innerHTML = html
+// }
+
+// displayEntries()
+
+
+// document.addEventListener("statesChanged", event => {
+//     displayEntries()
+//   })
+  
